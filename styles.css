@@ -58,6 +58,9 @@
         .header-brand-name { color: #fff; font-size: 18px; line-height: 1.15; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
         .header-search { flex: 0 1 600px; width: 100%; max-width: 600px; }
         .header-search-icon { width: 52px; }
+        #mobileSearchInput { color: #0f172a; background-color: #fff; caret-color: #0f172a; -webkit-text-fill-color: #0f172a; }
+        #mobileSearchInput::placeholder { color: #94a3b8; opacity: 1; -webkit-text-fill-color: #94a3b8; }
+        #mobileSearchInput:focus { color: #0f172a; background-color: #fff; -webkit-text-fill-color: #0f172a; }
         .subscribe-soft { background: transparent; color: #e9edf5; border: 0; }
         .subscribe-soft:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
         .subscribe-soft:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }

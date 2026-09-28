@@ -56,7 +56,7 @@
 
         <div id="mobileSearch" class="md:hidden px-4 pb-4 flex flex-wrap gap-2">
             <form class="relative flex-1" onsubmit="showSearchResults(event)">
-                <input type="text" id="mobileSearchInput" aria-label="Buscar producto, servicio o negocio" oninput="syncMobileSearch(this.value)" placeholder="Buscar producto, servicio o negocio" class="w-full h-11 pl-3 pr-11 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                <input type="search" id="mobileSearchInput" aria-label="Buscar producto, servicio o negocio" oninput="syncMobileSearch(this.value)" placeholder="Buscar producto, servicio o negocio" class="w-full h-11 pl-3 pr-11 bg-white text-slate-900 placeholder:text-slate-400 caret-slate-900 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
                 <button type="submit" aria-label="Ver resultados" title="Ver resultados" class="absolute right-0 top-0 h-11 w-11 flex items-center justify-center text-slate-600"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></button>
             </form>
         </div>
