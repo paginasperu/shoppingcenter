@@ -72,7 +72,6 @@ function loadBusinesses() {
         let activeType = "all";
         let activeRating = 0;
         let activeSort = 'original';
-        let categorySelected = false;
         let modalReturnFocus = null;
         let modalCloseTimer = null;
         let currentDetailId = null;
@@ -95,13 +94,23 @@ function loadBusinesses() {
         const whatsappUrl = item => {
             const digits = String(item.whatsapp || '').replace(/\D/g, '');
             return digits.length >= 8 && digits.length <= 15
-                ? `https://wa.me/${digits}?text=${encodeURIComponent(`Hola, vi tu negocio en el directorio del ${directoryConfig.name}, deseo más información sobre tu negocio...`)}`
+                ? `https://wa.me/${digits}?text=${encodeURIComponent('Hola, vi tu negocio en el directorio de San Miguel, deseo más información sobre tu negocio...')}`
                 : null;
         };
         function syncCategoryControls() {
             document.getElementById('categoryNavigation').innerHTML = categoryOptions.map((name, index) =>
                 `<button type="button" class="category-option" data-category-index="${index}" aria-pressed="${name === activeCategory}">${escapeHtml(name)}</button>`
             ).join('');
+            const categoryNav = document.getElementById('categoryNavigation');
+            const selectedCategory = categoryNav.querySelector('[aria-pressed="true"]');
+            if (selectedCategory) {
+                const selectedOffset = selectedCategory.getBoundingClientRect().left - categoryNav.getBoundingClientRect().left + categoryNav.scrollLeft;
+                const centeredScrollLeft = selectedOffset - (categoryNav.clientWidth - selectedCategory.offsetWidth) / 2;
+                categoryNav.scrollTo({
+                    left: activeCategory === 'Todos' ? 0 : Math.max(0, centeredScrollLeft),
+                    behavior: 'smooth'
+                });
+            }
             const types = [...new Set(providersData.filter(item => activeCategory === 'Todos' || item.category === activeCategory).map(item => item.type))];
             const typeFilter = document.getElementById('typeFilter');
             typeFilter.innerHTML = '<option value="all">Todos los tipos</option>' + types.map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`).join('');
@@ -170,8 +179,9 @@ function loadBusinesses() {
         // Seleccionar Categoría
         function selectCategory(catName) {
             activeCategory = catName;
-            categorySelected = catName !== 'Todos';
             activeType = 'all';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('mobileSearchInput').value = '';
             applyFilters();
         }
 
@@ -195,14 +205,6 @@ function loadBusinesses() {
             panel.classList.toggle('hidden', !shouldOpen);
             button.setAttribute('aria-expanded', String(shouldOpen));
         }
-        function searchAllCategories() {
-            activeCategory = 'Todos';
-            activeType = 'all';
-            categorySelected = false;
-            applyFilters();
-            document.getElementById('resultsToolbar').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
         // Restablecer Filtros
         function resetFilters() {
             document.getElementById('searchInput').value = '';
@@ -211,7 +213,6 @@ function loadBusinesses() {
             activeType = "all";
             activeRating = 0;
             activeSort = 'original';
-            categorySelected = false;
             document.getElementById('typeFilter').value = 'all';
             document.getElementById('ratingFilter').value = '0';
             document.getElementById('sortFilter').value = 'original';
@@ -225,23 +226,20 @@ function loadBusinesses() {
 
         // Filtrar y Renderizar Tarjetas
         function applyFilters(now = new Date()) {
-            syncCategoryControls();
             const searchValue = normalizeSearch(document.getElementById('searchInput').value);
             document.getElementById('mobileSearchInput').value = document.getElementById('searchInput').value;
+            if (searchValue) activeCategory = 'Todos';
 
-            const filtered = providersData.filter(item => {
-                // Filtro Categoría
-                const matchesCategory = (activeCategory === "Todos") || (item.category === activeCategory);
-
-                // Filtro Tipo
-                const matchesType = (activeType === "all") || (item.type === activeType);
-
-                // Filtro Texto
-                const matchesText = matchesSearch(item, searchValue);
+            const matchesExplicitFilters = item => {
+                const matchesType = activeType === 'all' || item.type === activeType;
                 const matchesRating = activeRating === 0 || (Number.isFinite(item.rating) && item.rating >= activeRating);
+                return matchesType && matchesRating && matchesSearch(item, searchValue);
+            };
 
-                return matchesCategory && matchesType && matchesRating && matchesText;
-            });
+            const filtered = providersData.filter(item =>
+                (activeCategory === 'Todos' || item.category === activeCategory) && matchesExplicitFilters(item)
+            );
+            syncCategoryControls();
 
             const sorters = {
                 rating: (a, b) => (Number.isFinite(b.rating) ? b.rating : -1) - (Number.isFinite(a.rating) ? a.rating : -1),
@@ -252,9 +250,6 @@ function loadBusinesses() {
 
             document.getElementById('resultsCount').textContent = `${filtered.length} ${filtered.length === 1 ? 'resultado' : 'resultados'}`;
             renderGrid(filtered, now);
-            const hasBroaderMatches = !filtered.length && activeCategory !== 'Todos' && Boolean(searchValue) &&
-                providersData.some(item => item.category !== activeCategory && matchesSearch(item, searchValue));
-            document.getElementById('searchAllCategoriesButton').classList.toggle('hidden', !hasBroaderMatches);
         }
 
         // Renderizar fichas con campos públicos de NEGOCIOS.
@@ -401,8 +396,20 @@ function loadBusinesses() {
             if (!query) return;
             document.getElementById('searchInput').value = field.value;
             applyFilters();
-            const target = document.getElementById('emptyState').classList.contains('hidden') ? 'resultsToolbar' : 'emptyState';
-            document.getElementById(target).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const emptyState = document.getElementById('emptyState');
+            const target = emptyState.classList.contains('hidden')
+                ? document.getElementById('resultsToolbar')
+                : emptyState;
+            const isMobileSearch = field.id === 'mobileSearchInput';
+            if (isMobileSearch) field.blur();
+
+            window.setTimeout(() => {
+                const rect = target.getBoundingClientRect();
+                const headerBottom = document.getElementById('siteHeader').getBoundingClientRect().bottom;
+                const viewportBottom = window.visualViewport?.height ?? window.innerHeight;
+                const targetIsVisible = rect.top >= headerBottom && rect.bottom <= viewportBottom;
+                if (!targetIsVisible) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, isMobileSearch ? 250 : 0);
         }
 
 loadBusinesses();
