@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIRECTORIO OFICIAL</title>
+    <title>Shopping Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config = {
             theme: {
@@ -39,9 +39,9 @@
 
     <header id="siteHeader" class="site-header sticky top-0 z-40">
         <div class="header-layout max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 items-center">
-            <button class="header-brand" onclick="goHome()" aria-label="Directorio Oficial, inicio">
-                <img id="businessLogo" alt="Directorio Oficial" hidden onload="this.hidden=false; this.nextElementSibling.hidden=true" onerror="this.hidden=true; this.nextElementSibling.hidden=false">
-                <span id="directoryName" class="header-brand-name">DIRECTORIO OFICIAL</span>
+            <button class="header-brand" onclick="goHome()" aria-label="Shopping Center, inicio">
+                <img id="businessLogo" alt="Shopping Center" hidden onload="this.hidden=false; this.nextElementSibling.hidden=true" onerror="this.hidden=true; this.nextElementSibling.hidden=false">
+                <span id="directoryName" class="header-brand-name">Shopping Center</span>
             </button>
 
             <div class="header-search hidden md:flex items-center min-w-0">
@@ -51,10 +51,10 @@
                 </form>
             </div>
 
-            <a id="subscribeLink" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20suscribirme%20gratis%20al%20Directorio%20Oficial..." target="_blank" rel="noopener noreferrer" aria-label="Suscríbete por WhatsApp para recibir promociones, novedades y recomendaciones" class="subscribe-soft ml-auto shrink-0 px-3 py-2 text-sm font-medium transition">Suscríbete</a>
+            <a id="subscribeLink" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20suscribirme%20gratis%20al%20directorio%20del%20Shopping%20Center" target="_blank" rel="noopener noreferrer" aria-label="Suscribirme gratis al directorio del Shopping Center por WhatsApp" class="subscribe-soft ml-auto shrink-0 px-3 py-2 text-sm font-medium transition">Suscríbete</a>
         </div>
 
-        <div id="mobileSearch" class="md:hidden px-4 pb-2 flex flex-wrap gap-2">
+        <div id="mobileSearch" class="md:hidden px-4 pb-4 flex flex-wrap gap-2">
             <form class="relative flex-1" onsubmit="showSearchResults(event)">
                 <input type="text" id="mobileSearchInput" aria-label="Buscar producto, servicio o negocio" oninput="syncMobileSearch(this.value)" placeholder="Buscar producto, servicio o negocio" class="w-full h-11 pl-3 pr-11 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
                 <button type="submit" aria-label="Ver resultados" title="Ver resultados" class="absolute right-0 top-0 h-11 w-11 flex items-center justify-center text-slate-600"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></button>
@@ -68,19 +68,36 @@
 
 
     <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 relative z-20 flex-grow pb-16">
+        <div id="resultsToolbar" class="results-toolbar" aria-label="Orden y filtros de resultados">
+            <p id="resultsCount" class="results-count" aria-live="polite"></p>
+            <div class="results-actions">
+                <label for="sortFilter" class="sr-only">Ordenar resultados</label>
+                <select id="sortFilter" aria-label="Ordenar resultados" onchange="setSortOrder(this.value)" class="results-sort">
+                    <option value="original">Orden original</option>
+                    <option value="rating">Mejor calificación</option>
+                    <option value="reviews">Más opiniones</option>
+                    <option value="name">Nombre A–Z</option>
+                </select>
+                <button id="filterToggle" type="button" onclick="toggleFilters()" aria-controls="moreFilters" aria-expanded="false" class="filter-toggle">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M4 7h16M7 12h10m-7 5h4"/></svg>
+                    <span>Filtros</span>
+                </button>
+            </div>
+        </div>
+
         <section id="moreFilters" class="hidden mb-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm" aria-label="Filtros de resultados">
             <div class="mb-3 flex items-baseline justify-between gap-3">
                 <h2 class="text-sm font-bold text-slate-800">Filtrar resultados</h2>
-                <span id="resultsCount" class="text-xs text-slate-500" aria-live="polite"></span>
             </div>
             <div class="results-filters">
-                <label class="open-switch">
-                    <input id="openNowFilter" type="checkbox" role="switch" class="sr-only" onchange="applyFilters()">
-                    <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
-                    <span>Solo abiertos ahora</span>
-                </label>
                 <select id="typeFilter" aria-label="Tipo de negocio" onchange="setTypeFilter(this.value)" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm">
                     <option value="all">Todos los tipos</option>
+                </select>
+                <select id="ratingFilter" aria-label="Calificación mínima" onchange="setRatingFilter(this.value)" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm">
+                    <option value="0">Cualquier calificación</option>
+                    <option value="3">3 estrellas o más</option>
+                    <option value="4">4 estrellas o más</option>
+                    <option value="4.5">4.5 estrellas o más</option>
                 </select>
                 <button onclick="resetFilters()" class="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-sm font-semibold">Limpiar búsqueda y filtros</button>
             </div>
@@ -119,10 +136,9 @@
                         </div>
                     </div>
                     <dl class="detail-info">
-                        <div><dt>Ubicación</dt><dd id="modalLocation"></dd></div>
-                        <div><dt>Atención</dt><dd id="modalOpenStatus"></dd></div>
-                        <div><dt>Horario</dt><dd id="modalHours"></dd></div>
-                        <div><dt>Teléfono para llamadas</dt><dd id="modalPhone"></dd></div>
+                        <div id="modalPhoneRow"><dt>Teléfono para llamadas</dt><dd id="modalPhone"></dd></div>
+                        <div><dt>Calificación</dt><dd><span id="modalRating"></span><span id="modalRatingReviews" class="detail-rating-reviews"></span></dd></div>
+                        <div id="modalFloorLocationRow"><dt>Piso, pasillo o local</dt><dd id="modalFloorLocation"></dd></div>
                     </dl>
                     <div id="modalProductsSection"><h3 class="text-sm font-bold text-slate-900 mb-2">Productos</h3><ul id="modalProducts" class="flex flex-wrap gap-2"></ul></div>
                     <div id="modalServicesSection"><h3 class="text-sm font-bold text-slate-900 mb-2">Servicios</h3><ul id="modalServices" class="flex flex-wrap gap-2"></ul></div>
@@ -138,19 +154,19 @@
 
     <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <button class="brand-logo" onclick="goHome()" aria-label="Directorio Oficial, inicio"><span class="brand-avatar"><i data-lucide="store" aria-hidden="true"></i></span></button>
+            <button class="brand-logo" onclick="goHome()" aria-label="Shopping Center, inicio"><span class="brand-avatar"><i data-lucide="store" aria-hidden="true"></i></span></button>
             
-            <p class="text-xs text-slate-500 text-center">
-                © 2026 <span id="directoryFooterName">DIRECTORIO OFICIAL</span>
+            <p class="directory-disclaimer text-xs text-slate-500 text-center">
+                © 2026 Shopping Center. Directorio gratuito e independiente; no es la página oficial ni está afiliado a ningún centro comercial. Datos referenciales, confirma cada dato con el negocio.
             </p>
 
             <div class="flex gap-4 text-xs font-medium">
-                <a id="contactLink" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20contactar%20al%20Directorio%20Oficial..." target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Contacto</a>
+                <a id="contactLink" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20directorio%20del%20Shopping%20Center" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Contacto</a>
             </div>
         </div>
     </footer>
     
-    <script src="app.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
 

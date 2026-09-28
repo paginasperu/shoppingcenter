@@ -1,9 +1,85 @@
-"id","nombre","descripcion","categoria","tipo","ubicacion","whatsapp","telefono","telefonos adicionales","instagram","facebook","tiktok","productos","servicios","foto de perfil","foto de portada","dias","abre","cierra"
-"1","Costa y Sabor","Ceviches y platos marinos preparados al momento.","Restaurantes","Cevichería","Local A-01","51950141414","950141414","","","","","Ceviche clásico|Chicharrón de pescado","","","","1|2|3|4|5|6","11:00","19:00"
-"2","Sazón a la Brasa","Pollos a la brasa y opciones para compartir.","Restaurantes","Pollería","Local A-02","51950141414","950141414","","","","","Pollo a la brasa|Papas fritas","","","","0|1|2|3|4|5|6","12:00","22:00"
-"3","Manos y Color","Cuidado y diseño de uñas con atención previa cita.","Belleza","Salón de uñas","Local B-01","51950141414","950141414","","","","","","Manicura|Diseño de uñas","","","1|2|3|4|5|6","10:00","20:00"
-"4","Corte Urbano","Cortes de cabello y arreglo de barba.","Belleza","Barbería","Local B-02","51950141414","950141414","","","","","","Corte clásico|Arreglo de barba","","","2|3|4|5|6|0","09:00","19:00"
-"5","Estilo Diario","Prendas y accesorios para uso diario.","Moda","Boutique","Local C-01","51950141414","950141414","","","","","Blusas|Accesorios","","","","1|2|3|4|5|6","10:00","20:00"
-"6","Mundo Móvil","Accesorios y protección para teléfonos.","Tecnología","Accesorios de celulares","Local C-02","51950141414","950141414","","","","","Fundas|Cargadores","","","","0|1|2|3|4|5|6","10:00","21:00"
-"7","Casa Viva","Artículos decorativos para el hogar.","Hogar","Decoración","Local D-01","51950141414","950141414","","","","","Lámparas|Cuadros","","","","1|2|3|4|5|6","10:00","19:00"
-"8","Soporte Express","Diagnóstico y reparación de teléfonos.","Servicios","Reparación de celulares","Local D-02","51950141414","950141414","","","","","","Diagnóstico|Cambio de pantalla","","","1|2|3|4|5|6","09:00","18:00"
+nombre,descripcion,telefono_1,telefono_2,instagram,facebook,tiktok,calificacion,opiniones,categoria,tipo,piso,local,productos,servicios,logo,verificado,fecha_registro,estado,notas,lugar_nombre
+Axon Tec,Tienda de accesorios para móviles,,,,,,4.1,3519,Accesorios,Accesorios para móviles,,,,,images/logos/axon-tec.jpg,,,,,Shopping Center San Miguel
+Boxera,Tienda de móviles,51913251708,,,,,4.7,216,Telefonía,Tienda de móviles,,,,,images/logos/boxera.jpg,,,,,Shopping Center San Miguel
+Bizago Epil,Servicio de depilación con cera,,,,,,5,204,Belleza,Depilación con cera,,,,,images/logos/bizago-epil.jpg,,,,,Shopping Center San Miguel
+El Mundo de las Maletas,Tienda de equipaje,51998133044,,,,,3.9,170,Comercio,Tienda de equipaje,,,,,images/logos/el-mundo-de-las-maletas.jpg,,,,,Shopping Center San Miguel
+Vape Station,Tienda de vaporizadores,51986650930,,,,,4.7,169,Comercio,Tienda de vaporizadores,,,,,images/logos/vape-station.png,,,,,Shopping Center San Miguel
+Music Zone,Tienda de instrumentos musicales,51930466270,,,,,4.5,127,Música,Instrumentos musicales,,,,,images/logos/music-zone.jpg,,,,,Shopping Center San Miguel
+Bermoney Barber Studio,Barbería,,,,,,5,87,Belleza,Barbería,,,,,images/logos/bermoney-barber-studio.jpg,,,,,Shopping Center San Miguel
+Joyas Pino,Joyería,51955066491,,,,,4.8,82,Comercio,Joyería,,,,,images/logos/joyas-pino.png,,,,,Shopping Center San Miguel
+Largophone,Tienda de móviles,51908639872,,,,,4.9,76,Telefonía,Tienda de móviles,,,,,images/logos/largophone.jpg,,,,,Shopping Center San Miguel
+Addiction Tattoo,Estudio de tatuajes,51992566143,,,,,4.7,75,Belleza,Estudio de tatuajes,,86,,,images/logos/addiction-tattoo.jpg,,,,,Shopping Center San Miguel
+Inka Game Shop,Tienda de videojuegos,51966205226,,,,,4.7,59,Entretenimiento,Tienda de videojuegos,,,,,images/logos/inka-game-shop.jpg,,,,,Shopping Center San Miguel
+Boost,Tienda de móviles,51983317702,,,,,4.4,46,Telefonía,Tienda de móviles,,,,,images/logos/boost.jpg,,,,,Shopping Center San Miguel
+Western Union,Servicio de transferencias de dinero,,,,,,2.1,42,Servicios financieros,Transferencias de dinero,,,,,images/logos/western-union.jpg,,,,,Shopping Center San Miguel
+Tattoo Supply,Tienda de suministros para tatuajes,51908916417,,,,,4.8,36,Tatuajes,Suministros para tatuajes,,,,,images/logos/tattoo-supply.jpg,,,,,Shopping Center San Miguel
+The Cave Skateshop,Tienda de monopatines,51987951046,,,,,4.1,36,Deportes,Tienda de monopatines,,,,,images/logos/the-cave-skateshop.jpg,,,,,Shopping Center San Miguel
+Chili Vaper,Tienda de vaporizadores y cigarros electrónicos,51971018122,,,,,4.9,34,Comercio,Vaporizadores y cigarros electrónicos,,,,,images/logos/chili-vaper.jpg,,,,,Shopping Center San Miguel
+Taiyotaku Manga Store,Librería especializada en manga,51994371447,,,,,5,30,Comercio,Librería especializada en manga,,171,,,images/logos/taiyotaku-manga-store.jpg,,,,,Shopping Center San Miguel
+CR,Tienda de vitaminas y suplementos,51929452375,,,,,5,19,Salud,Vitaminas y suplementos,,,,,images/logos/cr.jpg,,,,,Shopping Center San Miguel
+YUI Corp,Importador,51912475171,,,,,4.9,19,Comercio,Importador,,201-A,,,images/logos/yui-corp.jpg,,,,,Shopping Center San Miguel
+Crazy Stuff,Tienda de artículos de colección,51940278653,,,,,4.8,18,Entretenimiento,Artículos de colección,,,,,images/logos/crazy-stuff.jpg,,,,,Shopping Center San Miguel
+TuCelu Store,Tienda de móviles,51937622127,,,,,3.7,17,Telefonía,Tienda de móviles,,,,,images/logos/tucelu-store.jpg,,,,,Shopping Center San Miguel
+Nonone Tattoo,Estudio de tatuajes y piercings,,,,,,4.8,17,Belleza,Tatuajes y piercings,,,,,images/logos/nonone-tattoo.jpg,,,,,Shopping Center San Miguel
+Sama Soporte,Servicio de reparación de teléfonos,,,,,,4.1,14,Telefonía,Reparación de teléfonos,,,,,images/logos/sama-soporte.jpg,,,,,Shopping Center San Miguel
+Tattoo Studio La Roca,Estudio de tatuajes,51996633472,,,,,4.9,13,Belleza,Estudio de tatuajes,,,,,images/logos/tattoo-studio-la-roca.jpg,,,,,Shopping Center San Miguel
+La Forja,Restaurante,,,,,,5,11,Restaurante,Restaurante,,,,,images/logos/la-forja.jpg,,,,,Shopping Center San Miguel
+Japan Music,Tienda de instrumentos musicales,51990278805,,,,,4.2,10,Música,Instrumentos musicales,,,,,images/logos/japan-music.jpg,,,,,Shopping Center San Miguel
+Óptica Megane,Óptica,51902205637,,,,,5,8,Salud,Óptica,,,,,images/logos/optica-megane.jpg,,,,,Shopping Center San Miguel
+iPhone Center,Tienda de móviles,51994175686,,,,,4.5,8,Telefonía,Tienda de móviles,,,,,images/logos/iphone-center.jpg,,,,,Shopping Center San Miguel
+Tujatofit,Tienda de vitaminas y suplementos,51931488738,,,,,5,7,Salud,Vitaminas y suplementos,,,,,images/logos/tujatofit.jpg,,,,,Shopping Center San Miguel
+Bobocha Bubble Tea,Tienda de té de burbujas,,,,,,4.3,7,Restaurante,Cafetería,,,,,images/logos/bobocha-bubble-tea.jpg,,,,,Shopping Center San Miguel
+Juseppy Tattoo,Estudio de tatuajes y piercings,,,,,,4.4,7,Belleza,Tatuajes y piercings,,,,,images/logos/juseppy-tattoo.jpg,,,,,Shopping Center San Miguel
+Chaufería El Santuario,Restaurante,,,,,,2.2,6,Restaurante,Restaurante,,,,,images/logos/chauferia-el-santuario.jpg,,,,,Shopping Center San Miguel
+Cell Point,Tienda de accesorios para móviles,51946417236,,,,,4,6,Accesorios,Accesorios para móviles,,"32, 34, 87 y 96",,,images/logos/cell-point.jpg,,,,,Shopping Center San Miguel
+iRestoreit,Servicio de reparación de teléfonos móviles,,,,,,4,5,Telefonía,Reparación de teléfonos móviles,,,,,images/logos/irestoreit.jpg,,,,,Shopping Center San Miguel
+Servicio Técnico California,Servicio de reparación de teléfonos móviles,,,,,,5,5,Telefonía,Reparación de teléfonos móviles,,,,,images/logos/servicio-tecnico-california.jpg,,,,,Shopping Center San Miguel
+Cajero Bitcoin,Cajero automático de criptomonedas,,,,,,5,5,Servicios financieros,Cajero de criptomonedas,,,,,images/logos/cajero-bitcoin.jpg,,,,,Shopping Center San Miguel
+Nápoli Barbería Clásica,Barbería,,,,,,3.4,5,Belleza,Barbería,,,,,images/logos/napoli-barberia-clasica.jpg,,,,,Shopping Center San Miguel
+Womanity Boutique,Boutique,5117469835,,,,,3.5,4,Comercio,Boutique,,,,,images/logos/womanity-boutique.jpg,,,,,Shopping Center San Miguel
+Worldweb Entertainment Store,Tienda de videojuegos,51977537411,,,,,4.5,4,Entretenimiento,Tienda de videojuegos,,,,,images/logos/worldweb-entertainment-store.jpg,,,,,Shopping Center San Miguel
+Agente Interbank,Agente bancario,5113119000,,,,,5,3,Servicios financieros,Agente bancario,,,,,images/logos/agente-interbank.jpg,,,,,Shopping Center San Miguel
+Vaporis,Agencia de marketing,,,,,,5,3,Marketing,Agencia de marketing,,,,,images/logos/vaporis.jpg,,,,,Shopping Center San Miguel
+Celu Centro,Servicio de reparación de teléfonos móviles,,,,,,5,2,Telefonía,Reparación de teléfonos móviles,,,,,images/logos/celu-centro.jpg,,,,,Shopping Center San Miguel
+Mapple Store Oficial,Tienda de móviles,51905432188,,,,,5,2,Telefonía,Tienda de móviles,,,,,images/logos/mapple-store-oficial.jpg,,,,,Shopping Center San Miguel
+Taekwondo NIM,Escuela de taekwondo,,,,,,5,2,Deportes,Escuela de taekwondo,,,,,images/logos/taekwondo-nim.png,,,,,Shopping Center San Miguel
+Eclipse Nails,Salón de uñas,,,,,,3,2,Belleza,Salón de uñas,,,,,images/logos/eclipse-nails.jpg,,,,,Shopping Center San Miguel
+Canelle Gift Shop,Tienda de regalos,51943297406,,,,,3,2,Comercio,Tienda de regalos,,,,,images/logos/canelle-gift-shop.jpg,,,,,Shopping Center San Miguel
+Liss Fabiana,Salón de belleza y peluquería,,,,,,5,1,Belleza,Salón de belleza y peluquería,,,,,images/logos/liss-fabiana.jpg,,,,,Shopping Center San Miguel
+Máximo Placer,Cafetería,,,,,,5,1,Restaurante,Cafetería,,,,,images/logos/maximo-placer.jpg,,,,,Shopping Center San Miguel
+Ibiza Smart,Tienda de móviles,51959794160,,,,,5,1,Telefonía,Tienda de móviles,,,,,images/logos/ibiza-smart.png,,,,,Shopping Center San Miguel
+Luxor Travel S.A.C,Agencia de viajes,,,,,,5,1,Servicios,Agencia de viajes,,,,,images/logos/luxor-travel-s-a-c.jpg,,,,,Shopping Center San Miguel
+Nextphone,Tienda comercial,51994033115,,,,,4,1,Comercio,Tienda comercial,,,,,images/logos/nextphone.jpg,,,,,Shopping Center San Miguel
+Karacolly,Tienda de regalos,,,,,,5,1,Comercio,Tienda de regalos,,,,,images/logos/karacolly.jpg,,,,,Shopping Center San Miguel
+Coffee Shop,Cafetería,,,,,,5,1,Restaurante,Cafetería,,,,,images/logos/coffee-shop.jpg,,,,,Shopping Center San Miguel
+Allimi Lashes & Nails,Salón de uñas y pestañas,,,,,,4,1,Belleza,Salón de uñas y pestañas,,,,,images/logos/allimi-lashes-nails.jpg,,,,,Shopping Center San Miguel
+Celutronic Giraldo,Servicio de reparación de teléfonos móviles,,,,,,1,1,Telefonía,Reparación de teléfonos móviles,,,,,images/logos/celutronic-giraldo.jpg,,,,,Shopping Center San Miguel
+LimaSmokeShop,Boutique,51987986566,,,,,5,1,Comercio,Boutique,,,,,images/logos/limasmokeshop.png,,,,,Shopping Center San Miguel
+Othila Spa,Spa,,,,,,5,1,Belleza,Spa,,,,,images/logos/othila-spa.jpg,,,,,Shopping Center San Miguel
+Stevenscastrotattoo,Estudio de tatuajes y piercings,,,,,,5,1,Belleza,Tatuajes y piercings,,,,,images/logos/stevenscastrotattoo.jpg,,,,,Shopping Center San Miguel
+Multifácil,Institución financiera,,,,,,1,1,Servicios financieros,Institución financiera,,,,,images/logos/multifacil.jpg,,,,,Shopping Center San Miguel
+Cataleya Nails & Lashes,Salón de uñas,,,,,,5,1,Belleza,Salón de uñas,,,,,images/logos/cataleya-nails-lashes.png,,,,,Shopping Center San Miguel
+DA Accesorios,Tienda de accesorios para automóviles,51940841423,,,,,,,Automóviles,Accesorios para automóviles,,,,,images/logos/da-accesorios.jpg,,,,,Shopping Center San Miguel
+My Service,Servicios técnicos,,,,,,,,Servicios técnicos,Servicio técnico,,,,,images/logos/my-service.jpg,,,,,Shopping Center San Miguel
+Asesoría de Viajes JG,Agencia de viajes,,,,,,,,Servicios,Agencia de viajes,,,,,images/logos/asesoria-de-viajes-jg.jpg,,,,,Shopping Center San Miguel
+Comic Tattoo,Estudio de tatuajes y piercings,,,,,,,,Belleza,Tatuajes y piercings,,,,,images/logos/comic-tattoo.jpg,,,,,Shopping Center San Miguel
+KilPop Clothing,Tienda de ropa,51997275471,,,,,,,Moda,Tienda de ropa,,,,,images/logos/kilpop-clothing.jpg,,,,,Shopping Center San Miguel
+Vape Fast SAC,Mayorista de accesorios electrónicos,,,,,,,,Accesorios,Mayorista de accesorios electrónicos,,174,,,images/logos/vape-fast-sac.jpg,,,,,Shopping Center San Miguel
+Stagen,Tienda de relojes,51941384299,,,,,,,Comercio,Tienda de relojes,,,,,images/logos/stagen.png,,,,,Shopping Center San Miguel
+Torta Alta,Institución educativa,,,,,,,,Educación,Institución educativa,,,,,images/logos/torta-alta.jpg,,,,,Shopping Center San Miguel
+ePack,Fabricante,,,,,,,,Manufactura,Fabricante,,,,,images/logos/epack.jpg,,,,,Shopping Center San Miguel
+Vector Smart,Empresa de software,,,,,,,,Tecnología,Empresa de software,,,,,images/logos/vector-smart.jpg,,,,,Shopping Center San Miguel
+VIU Balloon,Tienda de globos,51982966211,,,,,,,Eventos,Tienda de globos,,,,,images/logos/viu-balloon.jpg,,,,,Shopping Center San Miguel
+Móviles Venperú,Tienda de móviles,,,,,,,,Telefonía,Tienda de móviles,,,,,images/logos/moviles-venperu.jpg,,,,,Shopping Center San Miguel
+Soter,Bazar de artículos tácticos y outdoor,51964735879,,,,,,,Comercio,Artículos tácticos y outdoor,,,,,images/logos/soter.jpg,,,,,Shopping Center San Miguel
+Diego,Tienda de calzado,,,,,,,,Comercio,Tienda de calzado,,,,,images/logos/diego.jpg,,,,,Shopping Center San Miguel
+Bodega del Pino,Tienda general,,,,,,,,Comercio,Tienda general,,,,,images/logos/bodega-del-pino.jpg,,,,,Shopping Center San Miguel
+Sensual Toys,Tienda de entretenimiento para adultos,51981658650,,,,,,,Adultos,Tienda para adultos,,,,,images/logos/sensual-toys.jpg,,,,,Shopping Center San Miguel
+Nails Queen,Salón de belleza,,,,,,,,Belleza,Salón de belleza,,,,,images/logos/nails-queen.jpg,,,,,Shopping Center San Miguel
+Dona Pepa,Restaurante,,,,,,,,Restaurante,Restaurante,,,,,images/logos/dona-pepa.jpg,,,,,Shopping Center San Miguel
+Entre Bebés y Niños,Tienda de ropa para bebés y niños,51987925816,,,,,,,Moda,Ropa para bebés y niños,,,,,images/logos/entre-bebes-y-ninos.jpg,,,,,Shopping Center San Miguel
+Shawarmas El Faraón Express,Restaurante de comida rápida,,,,,,4,23,Restaurante,Comida rápida,,,,,,,,,,Shopping Center San Miguel
+Arquerosperu,Tienda de artículos deportivos,51913114586,,,,,4,11,Deportes,Artículos deportivos,,180,,,,,,,,Shopping Center San Miguel
+UELE,Agencia de marketing olfativo,,,,,,5,1,Marketing,Marketing olfativo,,42,,,,,,,,Shopping Center San Miguel
+Taberna del Vapeador,Tienda de vaporizadores,51927063800,,,,,4.8,16,Comercio,Tienda de vaporizadores,,166,,,,,,,,Shopping Center San Miguel
+Clock,Tienda de relojes,51914651451,,,,,5,71,Comercio,Tienda de relojes,,,,,,,,,,Shopping Center San Miguel
